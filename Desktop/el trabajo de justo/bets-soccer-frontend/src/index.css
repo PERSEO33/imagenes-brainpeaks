@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg-dark: #003b2f;
+  --bg-emerald: #006351;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bet-yellow: #ffdf1b;
+  --bet-green: #00a758;
+  --text-white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  
+  /* Backward compatibility with previous names but new values */
+  --neon-green: #ffdf1b; /* Now yellow for better contrast */
+  --gold: #00a758; /* Now a solid betting green */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.glass-card:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-primary {
+  --background: var(--bet-yellow);
+  --color: #000;
+  --border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-secondary {
+  --background: var(--bg-emerald);
+  --color: #fff;
+  --border-radius: 8px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.text-neon {
+  color: var(--bet-yellow);
+  text-shadow: 0 0 15px rgba(255, 223, 27, 0.2);
+}
+
+.text-gold {
+  color: var(--bet-green);
+  text-shadow: 0 0 15px rgba(0, 167, 88, 0.2);
+}
+
+ion-toolbar {
+  --background: var(--bg-emerald);
+  --color: #fff;
+  --border-style: none;
+}
+
+ion-content {
+  --background: var(--bg-dark);
+}
+
+ion-item {
+  --background: transparent;
+  --border-color: rgba(255, 255, 255, 0.05);
+}
+
+ion-card {
+  box-shadow: none !important;
+  margin: 16px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.4s ease forwards;
+}
